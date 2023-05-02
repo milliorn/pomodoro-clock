@@ -20,40 +20,54 @@ export default function App() {
 
   const audioRef = useRef(null);
 
+  // handles audio playback using the audioRef object.
   function handleAudio(shouldReset = false) {
     if (!audioRef.current) {
       return;
     }
 
+    // set the current time of the audioRef to 0 and pause playback.
     if (shouldReset) {
       audioRef.current.currentTime = 0;
       audioRef.current.pause();
     } else {
+      // play the audio.
       audioRef.current.play();
     }
   }
 
+  /**
+   * starts a timer countdown based on the default state values, which includes a timer for minutes and seconds.
+   * @param {Object} defaultState - containing the default state values for the timer.
+   * @param {function} setCurrentSession - set the current session (break or session).
+   * @param {function} setPause - set the pause state.
+   * @returns {number} ID of the timer interval.
+   */
   function startTimer(defaultState, setCurrentSession, setPause) {
     let intervalCleared = true;
     let nextTick = 1000;
     let { timerMinutes, timerSeconds } = defaultState;
 
+    /**
+     * handles the timer tick.
+     */
     function handleTimerTick() {
       const startTime = Date.now();
 
+      // Decrements timer seconds
       if (timerSeconds === 0) {
         timerMinutes--;
         timerSeconds = 60;
       }
-
       timerSeconds--;
 
+      // if the timer has ended, update the state
       if (timerMinutes < 0 && intervalCleared) {
         intervalCleared = false;
         timerSeconds = 0;
-
         clearInterval(timerIntervalID);
 
+        // set next session (break or session)
         const nextSession =
           currentSession === "session"
             ? "break"
@@ -61,6 +75,7 @@ export default function App() {
             ? "session"
             : "break";
 
+        // update state with next session values
         timerMinutes = defaultState[`${nextSession}Mins`];
 
         setDefaultState({
@@ -73,6 +88,7 @@ export default function App() {
         setPause("restart");
       }
 
+      // update timer state
       setDefaultState({
         ...defaultState,
         timerMinutes,
@@ -82,9 +98,11 @@ export default function App() {
 
       const stoptime = Date.now();
 
+      // time difference between start time and stop time
       nextTick = 1000 - (stoptime - startTime);
     }
 
+    // set interval for timer
     const timerIntervalID = setInterval(handleTimerTick, nextTick);
     return timerIntervalID;
   }
@@ -95,6 +113,8 @@ export default function App() {
     const key = `${type}Mins`;
 
     if (action === "inc" && defaultState[key] < 60) {
+      // if action is "inc" and duration is less than 60 minutes,
+      // update state to increase duration by 1 minute
       setDefaultState({
         ...defaultState,
         [key]: defaultState[key] + 1,
@@ -105,6 +125,8 @@ export default function App() {
         }),
       });
     } else if (action === "dec" && defaultState[key] > 1) {
+      // if action is "dec" and duration is greater than 1 minute,
+      // update state to decrease duration by 1 minute
       setDefaultState({
         ...defaultState,
         [key]: defaultState[key] - 1,
@@ -117,13 +139,21 @@ export default function App() {
     }
   }
 
+  /**
+   * handles the session controls such as pause, play and reset.
+   * @param {string} type - session control, can be "reset", "pause" or "playing".
+   * "reset" resets the session to the initial state,
+   * "pause" pauses the session and "playing" resumes the session.
+   */
   function handleSessionControls(type) {
     if (type === "reset") {
-      handleAudio(true);
-      setCurrentSession("session");
-      setDefaultState(initialState);
-      setPause("pause");
+      // Resets the session to the initial state
+      handleAudio(true); // Stops the audio
+      setCurrentSession("session"); // Sets the session to "session"
+      setDefaultState(initialState); // Sets the default state to the initial state
+      setPause("pause"); // Sets the pause state to "pause"
     } else {
+      // Toggles the pause state
       setPause(pause === "playing" ? "pause" : "playing");
     }
   }
