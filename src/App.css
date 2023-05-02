@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection {
+  background-color: #262626;
+  color: #f4f4f5;
+}
+
+::selection {
+  background-color: #262626;
+  color: #f4f4f5;
+}
+
+body {
+  background: -o-radial-gradient(#ede9fe, #1e293b);
+  background: -webkit-radial-gradient(#ede9fe, #1e293b);
+  background: radial-gradient(#ede9fe, #1e293b);
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+header h1 {
+  margin: 1.25rem 0;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  font-weight: 700;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.control-display {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.control-title {
+  color: #27272a;
+}
+
+.controls {
+  border: 0.125rem solid #000;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  margin: 0.625rem;
+  padding: 0.375rem 0.625rem;
+  transition-duration: 1000ms;
+  user-select: none;
+}
+
+.controls:hover {
+  border-color: #fafafa;
+}
+
+.duration-controls {
+  margin: 0.625rem;
+  padding: 0.625rem;
+  text-align: center;
+}
+
+.session-controls .controls {
+  align-items: center;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  padding: 0;
+  user-select: none;
+  width: 5rem;
+}
+
+.session-controls {
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  line-height: 2rem;
+}
+
+.session-timer {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.session-title span {
+  color: #27272a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-transform: capitalize;
+}
+
+.time-controls {
+  display: flex;
+}
+
+.timer-display {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+#session-length,
+#break-length {
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 640px) {
+  .time-controls {
+    flex-direction: column;
+    margin-bottom: 0.625rem;
+  }
+
+  .duration-controls {
+    margin: 0;
+    padding: 0.375rem;
+  }
+}
+
+@media only screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* styles for both iPad Air and iPad Mini */
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  span {
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+  }
+
+  .controls {
+    border-radius: 9999px;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .session-timer {
+    margin: 0.125rem;
+    padding: 0.375rem;
+  }
+
+  .session-title span {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  #session-length,
+  #break-length {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* styles for iPad Pro and larger */
+  h1 {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  span {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .controls {
+    border-radius: 9999px;
+    font-size: 3rem;
+    line-height: 1;
+    margin: 1.25rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .session-timer {
+    margin: 0.125rem;
+    padding: 0.375rem;
+  }
+
+  .session-title span {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  #start_stop,
+  #reset {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  #session-length,
+  #break-length {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
