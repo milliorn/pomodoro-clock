@@ -145,10 +145,14 @@ export default function App() {
     <div className="container">
       <Header />
       <main>
-        <div className="time-controls">
-          <div className="duration-controls">
+        <section className="time-controls">
+          <article className="duration-controls">
             <BreakLabel />
-            <div className="control-display">
+            <div
+              className="control-display"
+              role="group"
+              aria-labelledby="session-label"
+            >
               <div
                 className="controls decrement"
                 id="break-decrement"
@@ -156,7 +160,9 @@ export default function App() {
               >
                 <AiOutlineArrowDown />
               </div>
-              <div id="break-length">{defaultState.breakMins}</div>
+              <output id="break-length" name="break-length">
+                {defaultState.breakMins}
+              </output>
               <div
                 className="controls increment"
                 id="break-increment"
@@ -165,10 +171,15 @@ export default function App() {
                 <AiOutlineArrowUp />
               </div>
             </div>
-          </div>
-          <div className="duration-controls">
+          </article>
+
+          <article className="duration-controls">
             <SessionLabel />
-            <div className="control-display">
+            <div
+              className="control-display"
+              role="group"
+              aria-labelledby="session-label"
+            >
               <div
                 className="controls decrement"
                 id="session-decrement"
@@ -176,7 +187,9 @@ export default function App() {
               >
                 <AiOutlineArrowDown />
               </div>
-              <div id="session-length">{defaultState.sessionMins}</div>
+              <output id="session-length" name="session-length">
+                {defaultState.sessionMins}
+              </output>
               <div
                 className="controls increment"
                 id="session-increment"
@@ -185,8 +198,9 @@ export default function App() {
                 <AiOutlineArrowUp />
               </div>
             </div>
-          </div>
-        </div>
+          </article>
+        </section>
+
         <div className="timer-display">
           <div className="session-title">
             <span id="timer-label">{currentSession} Time</span>
@@ -201,6 +215,7 @@ export default function App() {
               {defaultState.formattedTime}
             </div>
           </div>
+
           <div className="session-controls">
             <div
               className="controls"
