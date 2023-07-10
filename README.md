@@ -6,62 +6,48 @@ Apps and websites providing timers and instructions have widely popularized the 
 
 <https://en.wikipedia.org/wiki/Pomodoro_Technique>
 
-## Getting Started with Create React App
+The project is built using React and follows the specifications of the freeCodeCamp challenge: [Build a 25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Source
+- Countdown timer for both session and break durations
+- Adjustable session and break lengths
+- Start, pause, and reset functionality
+- Visual indicators for the current session and remaining time
 
-<https://create-react-app.dev/>
+## Live Demo
 
-## Available Scripts
+To see the Pomodoro Clock in action, visit the [live demo](https://milliorn.github.io/pomodoro-clock).
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- React: JavaScript library for building user interfaces
+- HTML: Markup language for structuring the web page
+- CSS: Styling language for designing the user interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the Pomodoro Clock locally, follow these steps:
 
-### `npm run build`
+1. Clone the repository: `git clone https://github.com/milliorn/pomodoro-clock.git`
+2. Navigate to the project directory: `cd pomodoro-clock`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the Pomodoro Clock.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please create an issue or submit a pull request.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deployment
 
-## Learn More
+The project is deployed using [GitHub Pages](https://pages.github.com/). The live demo can be accessed at [https://milliorn.github.io/pomodoro-clock](https://milliorn.github.io/pomodoro-clock).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-### Code Splitting
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The Pomodoro Clock project is part of the freeCodeCamp curriculum. Special thanks to freeCodeCamp for providing the project specifications and resources.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
